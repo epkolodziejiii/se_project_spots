@@ -1,0 +1,125 @@
+.profile {
+  display: flex;
+  padding-top: 34px;
+  padding-bottom: 20px;
+  border-bottom: 1px rgba(33, 33, 33, 0.4) solid;
+}
+
+.profile__name {
+  margin: 0 0 12px;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 1;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  max-width: 420;
+}
+
+.profile__description {
+  margin: 0;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  max-width: 420;
+}
+
+.profile__plus-button {
+  margin-top: auto;
+  margin-left: auto;
+  background-color: #212121;
+  color: white;
+  width: 157px;
+  height: 52px;
+  border-radius: 10px;
+  border: 0;
+}
+
+.profile__plus-button:hover {
+  opacity: 80%;
+}
+
+.profile__plus-icon {
+  height: 12px;
+  width: 12px;
+  padding-right: 8px;
+}
+
+.profile__edit-icon {
+  background-color: none;
+}
+
+.profile__avatar {
+  height: 190px;
+  width: 190px;
+  margin-right: 20px;
+}
+
+.profile__column {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile__edit-button {
+  display: flex;
+  justify-content: left;
+  gap: 8px;
+  margin-top: auto;
+  background: none;
+  border: none;
+  height: 16px;
+  width: 107.34;
+}
+
+.profile__edit-button:hover {
+  opacity: 50%;
+}
+
+@media screen and (max-width: 627px) {
+  .profile {
+    flex-direction: column;
+    max-width: 288px;
+    align-items: center;
+    text-align: center;
+    padding-top: 20px;
+  }
+  .profile__avatar {
+    margin-right: 0;
+    width: 80px;
+    height: 80px;
+    margin: 0 0 12px;
+  }
+  .profile__name {
+    font-size: 20px;
+    margin-bottom: 12px;
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    max-width: 288;
+  }
+  .profile__column {
+    margin: 0 0 20px;
+  }
+  .profile__description {
+    margin: 0 0 32px;
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    max-width: 288;
+  }
+  .profile__edit-button {
+    display: flex;
+    justify-content: center;
+  }
+  .profile__plus-button {
+    margin-left: 0;
+  }
+}

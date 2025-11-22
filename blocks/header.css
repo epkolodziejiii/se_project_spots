@@ -1,0 +1,12 @@
+.header {
+  background-color: white;
+  padding: 10px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.header__logo {
+  margin: 0 auto;
+  min-height: 26px;
+  min-width: 94px;
+}
