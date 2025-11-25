@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #fcf5ef;
+  background-color: #fcf5e5;
   font-family: Poppins, sans-serif;
   font-style: normal;
   margin-right: 0;
@@ -10,9 +10,6 @@
 }
 
 .footer__content {
-  margin-top: 50px;
-  margin-bottom: 50px;
-  margin-right: 0;
-  margin-left: 0;
-  font-weight: 100;
+  padding: 60px 0;
+  font-weight: 400;
 }

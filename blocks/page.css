@@ -1,5 +1,5 @@
 .page {
-  background-color: #fcf5ef;
+  background-color: #fcf5e5;
   font-family: Poppins, sans-serif;
   font-style: normal;
   min-height: 100vh;
@@ -8,4 +8,10 @@
 .page__section {
   max-width: 1280px;
   margin: 0 auto;
+}
+
+@media screen and (max-width: 480px) {
+  .page__section {
+    max-width: 288px;
+  }
 }

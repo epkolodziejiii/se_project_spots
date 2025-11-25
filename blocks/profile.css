@@ -15,7 +15,7 @@
   text-overflow: ellipsis;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
-  max-width: 420;
+  max-width: 420px;
 }
 
 .profile__description {
@@ -25,7 +25,7 @@
   text-overflow: ellipsis;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
-  max-width: 420;
+  max-width: 420px;
 }
 
 .profile__plus-button {
@@ -35,7 +35,7 @@
   color: white;
   width: 157px;
   height: 52px;
-  border-radius: 10px;
+  border-radius: 8px;
   border: 0;
 }
 
@@ -57,6 +57,7 @@
   height: 190px;
   width: 190px;
   margin-right: 20px;
+  border-radius: 8px;
 }
 
 .profile__column {
@@ -121,5 +122,6 @@
   }
   .profile__plus-button {
     margin-left: 0;
+    width: 100%;
   }
 }

@@ -3,7 +3,11 @@
   width: 100%;
   object-fit: cover;
   display: block;
-  border-radius: 10px;
+  border-radius: 8px;
+}
+
+.card__title {
+  margin: 0px;
 }
 
 .card__content {
@@ -17,7 +21,7 @@
 }
 
 .card__like-button {
-  background-image: url(../images/Like\ Icon.svg);
+  background-image: url(../images/Like_Icon.svg);
   background-color: transparent;
 
   opacity: 40%;
