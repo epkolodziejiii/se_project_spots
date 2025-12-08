@@ -37,6 +37,7 @@
   background: none;
   border: none;
   opacity: 50%;
+  cursor: pointer;
 }
 
 .modal__close-button:hover {
@@ -79,6 +80,7 @@
   padding: 18px, 32px, 18px;
   border-radius: 8px;
   border: none;
+  cursor: pointer;
 }
 
 .modal__submit-button:hover {
@@ -90,5 +92,21 @@
     width: 100%;
     margin-right: 0;
     margin-left: 0;
+    padding: 12px;
+  }
+  .modal__title {
+    font-size: 20px;
+  }
+  .modal__label {
+    font-size: 16px;
+  }
+  .modal__input::placeholder {
+    font-size: 16px;
+  }
+  .modal__input {
+    font-size: 16px;
+  }
+  .modal__submit-button {
+    font-size: 16px;
   }
 }

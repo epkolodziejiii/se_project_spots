@@ -37,6 +37,7 @@
   height: 52px;
   border-radius: 8px;
   border: 0;
+  cursor: pointer;
 }
 
 .profile__plus-button:hover {
@@ -74,6 +75,7 @@
   border: none;
   height: 16px;
   width: 107.34;
+  cursor: pointer;
 }
 
 .profile__edit-button:hover {
