@@ -58,23 +58,37 @@ const addCardFormEl = newPostModal.querySelector(".modal__form");
 const nameInput = document.querySelector("#post-description-input");
 const linkInput = document.querySelector("#card-image-input");
 
+//function (stage 7)
+
+function openModal(modal) {
+  modal.classList.add("modal_is-opened");
+}
+
+function closeModal(modal) {
+  modal.classList.remove("modal_is-opened");
+}
+
 //Functions (Sprint 4:Opening and Closing Modals)
 editProfileButton.addEventListener("click", function () {
-  editProfileModal.classList.add("modal_is-opened");
+  //editProfileModal.classList.add("modal_is-opened"); Was redundnat - see line 63
   editProfileNameInput.value = profileNameEl.textContent;
   editProfileDescriptionInput.value = profileDescriptionEl.textContent;
+  openModal(editProfileModal);
 });
 
 editProfileCloseButton.addEventListener("click", function () {
-  editProfileModal.classList.remove("modal_is-opened");
+  //editProfileModal.classList.remove("modal_is-opened"); Was redundnat - see line 67
+  closeModal(editProfileModal);
 });
 
 newPostButton.addEventListener("click", function () {
-  newPostModal.classList.add("modal_is-opened");
+  //newPostModal.classList.add("modal_is-opened"); Was redundnat - see line 63
+  openModal(editProfileModal);
 });
 
 newPostCloseButton.addEventListener("click", function () {
-  newPostModal.classList.remove("modal_is-opened");
+  //newPostModal.classList.remove("modal_is-opened"); Was redundnat - see line 67
+  closeModal(editProfileModal);
 });
 
 // Edit Profile
