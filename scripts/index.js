@@ -1,6 +1,11 @@
 //Name and Photo Link Array
 const initialCards = [
   {
+    name: "Golden Gate Bridge",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/7-photo-by-griffin-wooldridge-from-pexels.jpg",
+  },
+
+  {
     name: "Val Thorens",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/1-photo-by-moritz-feldmann-from-pexels.jpg",
   },
@@ -58,6 +63,56 @@ const addCardFormEl = newPostModal.querySelector(".modal__form");
 const nameInput = document.querySelector("#post-description-input");
 const linkInput = document.querySelector("#card-image-input");
 
+//Variables (Stage 8 Part II)
+
+const previewModal = document.querySelector("#preview-modal");
+const previewModalCloseButton = previewModal.querySelector(
+  ".modal__close-button_preview"
+);
+const previewImageElement = previewModal.querySelector(".modal__image");
+const previewCaptionElement = previewModal.querySelector(".modal__caption");
+//Variables (Stage 8)
+
+const cardTemplate = document
+  .querySelector("#card-template")
+  .content.querySelector(".card");
+const cardsList = document.querySelector(".cards__list");
+
+//Function (stage 8)
+
+function getCardElement(data) {
+  const cardElement = cardTemplate.cloneNode(true);
+  const cardTitleElement = cardElement.querySelector(".card__title");
+  const cardImageElement = cardElement.querySelector(".card__image");
+
+  cardImageElement.src = data.link;
+  cardImageElement.alt = data.name;
+  cardTitleElement.textContent = data.name;
+
+  const cardLikeButtonElement = cardElement.querySelector(".card__like-button");
+  cardLikeButtonElement.addEventListener("click", function () {
+    cardLikeButtonElement.classList.toggle("card__like-button_active");
+  });
+
+  const cardDeleteButtonElement = cardElement.querySelector(
+    ".card__delete-button"
+  );
+  cardDeleteButtonElement.addEventListener("click", () => {
+    cardDeleteButtonElement.closest(".card").remove();
+  });
+
+  //function (stage 8)
+
+  cardImageElement.addEventListener("click", () => {
+    previewImageElement.src = data.link;
+    previewImageElement.alt = data.name;
+    previewCaptionElement.textContent = data.name;
+    openModal(previewModal);
+  });
+
+  return cardElement;
+}
+
 //function (stage 7)
 
 function openModal(modal) {
@@ -83,12 +138,16 @@ editProfileCloseButton.addEventListener("click", function () {
 
 newPostButton.addEventListener("click", function () {
   //newPostModal.classList.add("modal_is-opened"); Was redundnat - see line 63
-  openModal(editProfileModal);
+  openModal(newPostModal);
 });
 
 newPostCloseButton.addEventListener("click", function () {
   //newPostModal.classList.remove("modal_is-opened"); Was redundnat - see line 67
-  closeModal(editProfileModal);
+  closeModal(newPostModal);
+});
+
+previewModalCloseButton.addEventListener("click", function () {
+  closeModal(previewModal);
 });
 
 // Edit Profile
@@ -97,7 +156,9 @@ function handleProfileFormSubmit(evt) {
 
   profileNameEl.textContent = editProfileNameInput.value;
   profileDescriptionEl.textContent = editProfileDescriptionInput.value;
-  editProfileModal.classList.remove("modal_is-opened");
+  //editProfileModal.classList.remove("modal_is-opened");
+  closeModal(editProfileModal);
+  //update close
 }
 
 editProfileFormEl.addEventListener("submit", handleProfileFormSubmit);
@@ -105,16 +166,24 @@ editProfileFormEl.addEventListener("submit", handleProfileFormSubmit);
 // Add New Post
 function handleAddCardSubmit(evt) {
   evt.preventDefault();
-  console.log(nameInput.value);
-  console.log(linkInput.value);
+  //console.log(nameInput.value);
+  //console.log(linkInput.value);
 
-  newPostModal.classList.remove("modal_is-opened");
+  const inputValues = {
+    name: nameInput.value,
+    link: linkInput.value,
+  };
+  const cardElement = getCardElement(inputValues);
+  cardsList.prepend(cardElement);
+  //newPostModal.classList.remove("modal_is-opened");
+  closeModal(newPostModal);
+  //update close
 }
 
 addCardFormEl.addEventListener("submit", handleAddCardSubmit);
 
 //Log
-initialCards.forEach(function (card) {
-  console.log(card.name);
-  console.log(card.link);
+initialCards.forEach(function (item) {
+  const cardElement = getCardElement(item);
+  cardsList.prepend(cardElement);
 });
