@@ -10,6 +10,10 @@
   border-radius: 8px;
 }
 
+.card__image:hover {
+  outline: 2px solid #007bff;
+}
+
 .card__title {
   margin: 0px;
   font-weight: 400;
@@ -26,13 +30,15 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+  margin-top: 10px;
 }
 
 .card__like-button {
   background-image: url(../images/Like_Icon.svg);
   background-color: transparent;
-
-  opacity: 40%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 0.4;
   width: 23px;
   height: 20px;
   border: none;
@@ -45,7 +51,7 @@
 }
 
 .card__like-button:hover {
-  opacity: 100%;
+  opacity: 1;
 }
 
 .card__like-button_active:hover {
@@ -64,6 +70,7 @@
   right: 10px;
   border: none;
   border-radius: 20px;
+  cursor: pointer;
 }
 
 .card__delete-button:hover {

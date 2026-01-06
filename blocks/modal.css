@@ -58,12 +58,12 @@
   height: 40px;
   background: none;
   border: none;
-  opacity: 50%;
+  opacity: 0.5;
   cursor: pointer;
 }
 
 .modal__close-button_preview {
-  top: -10px;
+  top: -30px;
   right: -40px;
 }
 
@@ -96,7 +96,7 @@
 
 .modal__input::placeholder {
   color: #212121;
-  opacity: 70%;
+  opacity: 0.7;
 }
 .modal__submit-button {
   background-color: black;
@@ -104,18 +104,14 @@
   width: 156px;
   height: 52px;
   margin-right: auto;
-  padding: 18px, 32px, 18px;
+  padding: 18px 32px 18px;
   border-radius: 8px;
   border: none;
   cursor: pointer;
 }
 
 .modal__submit-button:hover {
-  opacity: 50%;
-}
-
-.modal__container {
-  position: relative;
+  opacity: 0.5;
 }
 
 .modal__caption {
@@ -127,7 +123,7 @@
   padding-bottom: 4px;
   padding-left: 8px;
   margin-right: auto;
-  text-overflow: none;
+  text-overflow: ellipsis;
   font-weight: 500;
 }
 
@@ -152,5 +148,8 @@
   }
   .modal__container {
     padding: 12px;
+  }
+  .modal__caption {
+    font-size: 16px;
   }
 }

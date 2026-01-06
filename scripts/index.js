@@ -125,24 +125,20 @@ function closeModal(modal) {
 
 //Functions (Sprint 4:Opening and Closing Modals)
 editProfileButton.addEventListener("click", function () {
-  //editProfileModal.classList.add("modal_is-opened"); Was redundnat - see line 63
   editProfileNameInput.value = profileNameEl.textContent;
   editProfileDescriptionInput.value = profileDescriptionEl.textContent;
   openModal(editProfileModal);
 });
 
 editProfileCloseButton.addEventListener("click", function () {
-  //editProfileModal.classList.remove("modal_is-opened"); Was redundnat - see line 67
   closeModal(editProfileModal);
 });
 
 newPostButton.addEventListener("click", function () {
-  //newPostModal.classList.add("modal_is-opened"); Was redundnat - see line 63
   openModal(newPostModal);
 });
 
 newPostCloseButton.addEventListener("click", function () {
-  //newPostModal.classList.remove("modal_is-opened"); Was redundnat - see line 67
   closeModal(newPostModal);
 });
 
@@ -156,9 +152,8 @@ function handleProfileFormSubmit(evt) {
 
   profileNameEl.textContent = editProfileNameInput.value;
   profileDescriptionEl.textContent = editProfileDescriptionInput.value;
-  //editProfileModal.classList.remove("modal_is-opened");
+
   closeModal(editProfileModal);
-  //update close
 }
 
 editProfileFormEl.addEventListener("submit", handleProfileFormSubmit);
@@ -166,8 +161,6 @@ editProfileFormEl.addEventListener("submit", handleProfileFormSubmit);
 // Add New Post
 function handleAddCardSubmit(evt) {
   evt.preventDefault();
-  //console.log(nameInput.value);
-  //console.log(linkInput.value);
 
   const inputValues = {
     name: nameInput.value,
@@ -175,9 +168,8 @@ function handleAddCardSubmit(evt) {
   };
   const cardElement = getCardElement(inputValues);
   cardsList.prepend(cardElement);
-  //newPostModal.classList.remove("modal_is-opened");
+  addCardFormEl.reset();
   closeModal(newPostModal);
-  //update close
 }
 
 addCardFormEl.addEventListener("submit", handleAddCardSubmit);

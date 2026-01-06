@@ -51,7 +51,7 @@
 }
 
 .profile__edit-icon {
-  background-color: none;
+  background-color: transparent;
 }
 
 .profile__avatar {
@@ -68,13 +68,12 @@
 
 .profile__edit-button {
   display: flex;
-  justify-content: left;
+  justify-content: flex-start;
   gap: 8px;
   margin-top: auto;
   background: none;
   border: none;
   height: 16px;
-  width: 107.34;
   cursor: pointer;
 }
 
@@ -104,7 +103,7 @@
     text-overflow: ellipsis;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
-    max-width: 288;
+    max-width: 288px;
   }
   .profile__column {
     margin: 0 0 20px;
@@ -116,7 +115,7 @@
     text-overflow: ellipsis;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
-    max-width: 288;
+    max-width: 288px;
   }
   .profile__edit-button {
     display: flex;
