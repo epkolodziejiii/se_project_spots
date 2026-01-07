@@ -152,4 +152,9 @@
   .modal__caption {
     font-size: 16px;
   }
+
+  .modal__close-button_preview {
+    top: -70px;
+    right: 0px;
+  }
 }
