@@ -81,7 +81,10 @@
                 type="text"
                 class="modal__input"
                 placeholder="Type your name"
+                minlength="2"
+                maxlength="40"
               />
+              <span id="profile-name-input-error" Class="modal__error"></span>
             </label>
             <label for="profile-description-input" class="modal__label">
               Description
@@ -91,7 +94,13 @@
                 type="text"
                 class="modal__input"
                 placeholder="Describe yourself"
+                minlength="2"
+                maxlength="200"
               />
+              <span
+                id="profile-description-input-error"
+                Class="modal__error"
+              ></span>
             </label>
             <button type="submit" class="modal__submit-button">Save</button>
           </form>
@@ -112,20 +121,30 @@
             <label for="card-image-input" class="modal__label">
               Image Link
               <input
+                required
                 id="card-image-input"
                 type="url"
                 class="modal__input"
                 placeholder="Past a link to the picture"
+                type="url"
               />
+              <span id="card-image-input-error" Class="modal__error"></span>
             </label>
             <label for="post-description-input" class="modal__label">
               Caption
               <input
+                required
                 id="post-description-input"
                 type="text"
                 class="modal__input"
                 placeholder="Type your caption"
+                minlength="2"
+                maxlength="30"
               />
+              <span
+                id="post-description-input-error"
+                Class="modal__error"
+              ></span>
             </label>
             <button type="submit" class="modal__submit-button">Save</button>
           </form>
@@ -151,5 +170,6 @@
       </div>
     </div>
     <script src="./scripts/index.js"></script>
+    <script src="./scripts/validation.js"></script>
   </body>
 </html>
