@@ -41,7 +41,7 @@
 }
 
 .profile__plus-button:hover {
-  opacity: 80%;
+  opacity: 0.8;
 }
 
 .profile__plus-icon {
@@ -78,7 +78,7 @@
 }
 
 .profile__edit-button:hover {
-  opacity: 50%;
+  opacity: 0.5;
 }
 
 @media screen and (max-width: 627px) {

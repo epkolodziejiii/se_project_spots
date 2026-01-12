@@ -101,8 +101,6 @@ function getCardElement(data) {
     cardDeleteButtonElement.closest(".card").remove();
   });
 
-  //function (stage 8)
-
   cardImageElement.addEventListener("click", () => {
     previewImageElement.src = data.link;
     previewImageElement.alt = data.name;
@@ -113,17 +111,31 @@ function getCardElement(data) {
   return cardElement;
 }
 
-//function (stage 7)
-
 function openModal(modal) {
   modal.classList.add("modal_is-opened");
+  modal.addEventListener("click", handleOverlayClick);
+  document.addEventListener("keydown", handleEscape);
 }
 
 function closeModal(modal) {
   modal.classList.remove("modal_is-opened");
+  modal.removeEventListener("click", handleOverlayClick);
+  document.removeEventListener("keydown", handleEscape);
 }
 
-//Functions (Sprint 4:Opening and Closing Modals)
+function handleOverlayClick(event) {
+  if (event.target.classList.contains("modal")) closeModal(event.target);
+}
+
+function handleEscape(evt) {
+  if (evt.key === "Escape") {
+    const openModal = document.querySelector(".modal_is-opened");
+    if (openModal) {
+      closeModal(openModal);
+    }
+  }
+}
+
 editProfileButton.addEventListener("click", function () {
   editProfileNameInput.value = profileNameEl.textContent;
   editProfileDescriptionInput.value = profileDescriptionEl.textContent;
