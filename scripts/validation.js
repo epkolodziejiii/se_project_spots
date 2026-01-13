@@ -13,7 +13,7 @@ const showInputError = (formElement, inputElement, errorMessage, config) => {
   console.log(formElement);
   errorMessageElement.textContent = errorMessage;
   inputElement.classList.add(config.inputErrorClass);
-  errorMessageElement.classList.remove(config.errorClass);
+  errorMessageElement.classList.add(config.errorClass);
 };
 
 const hideInputError = (formElement, inputElement, config) => {
@@ -44,16 +44,12 @@ const hasInvalidInput = (inputList) => {
 
 const toggleButtonState = (inputList, buttonElement, config) => {
   if (hasInvalidInput(inputList)) {
-    buttonElement.disable = true;
+    buttonElement.disabled = true;
     buttonElement.classList.add(config.inactiveButtonClass);
   } else {
-    buttonElement.disable = false;
+    buttonElement.disabled = false;
     buttonElement.classList.remove(config.inactiveButtonClass);
   }
-};
-
-const disableButton = (buttonElement) => {
-  buttonElement.disabled = true;
 };
 
 const resetValidation = (formElement, inputList, config) => {

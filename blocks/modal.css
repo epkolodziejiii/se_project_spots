@@ -112,6 +112,10 @@
   margin-top: 8px;
 }
 
+.modal__error_visible {
+  display: block;
+}
+
 .modal__submit-button {
   background-color: black;
   color: white;

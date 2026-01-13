@@ -19,7 +19,7 @@ This is an image sharing based webpage similar to a social media platform. Displ
 
 ![@media CSS for profile portion](image.png)
 
-##Pitch Video (recorded on Loom): https://drive.google.com/file/d/1Vwhqhyio3YkKmYU11odqbfaFdZrnOPDX/view?usp=drive_link
+##Pitch Video (recorded on Loom): https://drive.google.com/file/d/14EEqoBAY12F0I819_8aOBCCC1F5jtZHc/view?usp=drive_link
 ##Video File Name is EdmundPKolodziejIII_ProjectPitch_SpotsStage9 ->follow above link to the video
 
 ##Deployment
