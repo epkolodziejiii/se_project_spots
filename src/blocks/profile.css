@@ -57,8 +57,37 @@
 .profile__avatar {
   height: 190px;
   width: 190px;
-  margin-right: 20px;
+
   border-radius: 8px;
+}
+
+.profile__avatar-container {
+  position: relative;
+  margin-right: 20px;
+}
+
+.profile__avatar-button {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  border: none;
+  gap: 8px;
+  padding-bottom: 10px;
+  visibility: hidden;
+}
+
+.profile__avatar-container:hover .profile__avatar-button {
+  visibility: visible;
+  border-radius: 8px;
+  background-color: rgba(33, 33, 33, 0.4);
+}
+
+.profile__avatar-button::after {
+  content: "Edit Avatar";
+  color: white;
 }
 
 .profile__column {
@@ -75,6 +104,7 @@
   border: none;
   height: 16px;
   cursor: pointer;
+  white-space: nowrap;
 }
 
 .profile__edit-button:hover {
@@ -124,5 +154,22 @@
   .profile__plus-button {
     margin-left: 0;
     width: 100%;
+  }
+  .profile__avatar-button {
+    align-items: center;
+    justify-content: center;
+    visibility: visible;
+    border-radius: 8px;
+    background-color: rgba(33, 33, 33, 0.4);
+    width: 23px;
+    height: 23px;
+    gap: 0px;
+    padding-bottom: 0px;
+    left: 55px;
+    top: 55px;
+  }
+
+  .profile__avatar-button::after {
+    content: "";
   }
 }
