@@ -6,7 +6,7 @@ import {
   toggleButtonState,
 } from "../scripts/validation.js";
 
-import Api from "../../utils/Api.js";
+import Api from "../utils/Api.js";
 
 const api = new Api({
   baseUrl: "https://around-api.en.tripleten-services.com/v1",
@@ -37,13 +37,13 @@ api
 const editProfileButton = document.querySelector(".profile__edit-button");
 const editProfileModal = document.querySelector("#edit-profile-modal");
 const editProfileCloseButton = editProfileModal.querySelector(
-  ".modal__close-button"
+  ".modal__close-button",
 );
 const editProfileNameInput = editProfileModal.querySelector(
-  "#profile-name-input"
+  "#profile-name-input",
 );
 const editProfileDescriptionInput = editProfileModal.querySelector(
-  "#profile-description-input"
+  "#profile-description-input",
 );
 const profileNameEl = document.querySelector(".profile__name");
 const profileAvatarEl = document.querySelector(".profile__avatar");
@@ -63,7 +63,7 @@ const linkInput = document.querySelector("#card-image-input");
 const editAvatarButton = document.querySelector(".profile__avatar-button");
 const editAvatarModal = document.querySelector("#edit-avatar-modal");
 const editAvatarCloseButton = editAvatarModal.querySelector(
-  ".modal__close-button"
+  ".modal__close-button",
 );
 const editAvatarForm = editAvatarModal.querySelector(".modal__form");
 const avatarLinkInput = document.querySelector("#avatar-image-input");
@@ -80,7 +80,7 @@ editAvatarCloseButton.addEventListener("click", function () {
 
 const previewModal = document.querySelector("#preview-modal");
 const previewModalCloseButton = previewModal.querySelector(
-  ".modal__close-button_preview"
+  ".modal__close-button_preview",
 );
 const previewImageElement = previewModal.querySelector(".modal__image");
 const previewCaptionElement = previewModal.querySelector(".modal__caption");
@@ -94,7 +94,7 @@ const cardsList = document.querySelector(".cards__list");
 const deleteModal = document.querySelector("#delete-modal");
 
 const deleteModalCloseButton = deleteModal.querySelector(
-  ".modal__close-button_preview"
+  ".modal__close-button_delete",
 );
 
 const deleteModalCancelButton = document.querySelector(".modal__cancel-button");
@@ -137,15 +137,15 @@ function getCardElement(data) {
     api
       .handleLike(
         data._id,
-        cardLikeButtonElement.classList.contains("card__like-button_active")
+        cardLikeButtonElement.classList.contains("card__like-button_active"),
       )
       .then(() =>
-        cardLikeButtonElement.classList.toggle("card__like-button_active")
-      )
+        cardLikeButtonElement.classList.toggle("card__like-button_active"),
+      ),
   );
 
   const cardDeleteButtonElement = cardElement.querySelector(
-    ".card__delete-button"
+    ".card__delete-button",
   );
 
   //Delete form elements
@@ -198,7 +198,7 @@ editProfileButton.addEventListener("click", function () {
   resetValidation(
     editProfileFormEl,
     [editProfileNameInput, editProfileDescriptionInput],
-    settings
+    settings,
   );
   openModal(editProfileModal);
 });

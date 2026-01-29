@@ -4,15 +4,17 @@ class Api {
     this._headers = headers;
   }
 
+  processResponse(res) {
+    if (res.ok) {
+      return res.json();
+    }
+    Promise.reject(`Error:${res.status}`);
+  }
+
   getUserInfo() {
     return fetch("https://around-api.en.tripleten-services.com/v1/users/me", {
       headers: this._headers,
-    }).then((res) => {
-      if (res.ok) {
-        return res.json();
-      }
-      Promise.reject("Error: ${res.status}");
-    });
+    }).then(this.processResponse);
   }
 
   getAppInfo() {
@@ -22,12 +24,7 @@ class Api {
   getInitialCards() {
     return fetch("https://around-api.en.tripleten-services.com/v1/cards", {
       headers: this._headers,
-    }).then((res) => {
-      if (res.ok) {
-        return res.json();
-      }
-      Promise.reject("Error: ${res.status}");
-    });
+    }).then(this.processResponse);
   }
 
   editUserInfo({ name, about }) {
@@ -39,12 +36,7 @@ class Api {
         name,
         about,
       }),
-    }).then((res) => {
-      if (res.ok) {
-        return res.json();
-      }
-      Promise.reject("Error: ${res.status}");
-    });
+    }).then(this.processResponse);
   }
 
   editAvatar({ avatar }) {
@@ -54,12 +46,7 @@ class Api {
       body: JSON.stringify({
         avatar,
       }),
-    }).then((res) => {
-      if (res.ok) {
-        return res.json();
-      }
-      Promise.reject("Error: ${res.statues}");
-    });
+    }).then(this.processResponse);
   }
 
   addCard({ name, link }) {
@@ -70,36 +57,21 @@ class Api {
         name,
         link,
       }),
-    }).then((res) => {
-      if (res.ok) {
-        return res.json();
-      }
-      Promise.reject("Error: ${res.statues}");
-    });
+    }).then(this.processResponse);
   }
 
   deleteCard(id) {
     return fetch(`${this._baseUrl}/cards/${id}`, {
       method: "DELETE",
       headers: this._headers,
-    }).then((res) => {
-      if (res.ok) {
-        return res.json();
-      }
-      Promise.reject("Error: ${res.statues}");
-    });
+    }).then(this.processResponse);
   }
 
   handleLike(id, isLiked) {
     return fetch(`${this._baseUrl}/cards/${id}/likes`, {
       method: isLiked ? "DELETE" : "PUT",
       headers: this._headers,
-    }).then((res) => {
-      if (res.ok) {
-        return res.json();
-      }
-      Promise.reject("Error: ${res.statues}");
-    });
+    }).then(this.processResponse);
   }
   // other methods for working with the API
 }

@@ -1,7 +1,9 @@
 .modal {
   visibility: hidden;
   opacity: 0;
-  transition: visibility 0s linear 0.5s, opacity 0.5s linear;
+  transition:
+    visibility 0s linear 0.5s,
+    opacity 0.5s linear;
   font-family: Poppins, sans-serif;
   font-style: normal;
   background-color: #00000080;
@@ -62,6 +64,20 @@
   cursor: pointer;
 }
 
+.modal__close-button_delete {
+  position: absolute;
+  top: 32px;
+  right: 50px;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  opacity: 0.5;
+  cursor: pointer;
+  top: -8px;
+  right: -40px;
+}
+
 .modal__close-button_preview {
   top: -30px;
   right: -40px;
@@ -76,10 +92,11 @@
 }
 
 .modal__title-delete {
-  margin: none;
   display: flex;
   justify-content: center;
   font-style: normal;
+  justify-content: center;
+  font-size: 20px;
 }
 
 .modal__form {
@@ -227,8 +244,20 @@
   }
 
   .modal__delete-buttons {
-    display: block;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     gap: 10px;
+    font-size: 20px;
+  }
+
+  .modal__close-button_delete {
+    right: -05px;
+    top: -40px;
+  }
+  .modal__close-button {
+    right: 5px;
+    top: 5px;
   }
 }

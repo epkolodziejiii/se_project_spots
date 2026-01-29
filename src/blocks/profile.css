@@ -104,6 +104,7 @@
   border: none;
   height: 16px;
   cursor: pointer;
+  white-space: nowrap;
 }
 
 .profile__edit-button:hover {
@@ -154,10 +155,18 @@
     margin-left: 0;
     width: 100%;
   }
-  .profile__avatar-container:hover .profile__avatar-button {
+  .profile__avatar-button {
+    align-items: center;
+    justify-content: center;
     visibility: visible;
     border-radius: 8px;
     background-color: rgba(33, 33, 33, 0.4);
+    width: 23px;
+    height: 23px;
+    gap: 0px;
+    padding-bottom: 0px;
+    left: 55px;
+    top: 55px;
   }
 
   .profile__avatar-button::after {
